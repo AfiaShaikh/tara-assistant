@@ -1,0 +1,552 @@
+[
+  {
+    "id": "Q01",
+    "question": "How should we verify firmware signature authenticity?",
+    "expected_source": "KB-01",
+    "split": "smoke",
+    "retrieved": [
+      "KB-01",
+      "KB-02",
+      "KB-03"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 1.229,
+    "output": {
+      "answer": "Firmware authenticity requires checking the update package signature against an authorized trust anchor before installation. A failed signature check must reject the package and leave the current firmware unchanged. This synthetic guidance does not assert that this control exists in the architecture.",
+      "citations": [
+        {
+          "id": "KB-01",
+          "title": "Firmware authenticity",
+          "text": "Firmware authenticity requires checking the update package signature against an authorized trust anchor before installation. A failed signature check must reject the package and leave the current firmware unchanged. This synthetic guidance does not assert that this control exists in the architecture.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-01",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 7.02804
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q02",
+    "question": "How do we prevent rollback to old firmware versions?",
+    "expected_source": "KB-02",
+    "split": "smoke",
+    "retrieved": [
+      "KB-02",
+      "KB-01",
+      "KB-03"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 1.061,
+    "output": {
+      "answer": "Rollback protection rejects older firmware versions below the authorized minimum version. Maintain protected version state and test attempted downgrade after successful update. A valid signature alone does not prevent installation of an old vulnerable version.",
+      "citations": [
+        {
+          "id": "KB-02",
+          "title": "Rollback prevention",
+          "text": "Rollback protection rejects older firmware versions below the authorized minimum version. Maintain protected version state and test attempted downgrade after successful update. A valid signature alone does not prevent installation of an old vulnerable version.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-02",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 10.59994
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q03",
+    "question": "How do we protect signing keys?",
+    "expected_source": "KB-03",
+    "split": "smoke",
+    "retrieved": [
+      "KB-03",
+      "KB-08"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.591,
+    "output": {
+      "answer": "Signing key confidentiality protects the ability to authorize firmware. Limit signing access, separate development and production keys, and use protected key storage. A leaked signing key can make malicious firmware appear authentic.",
+      "citations": [
+        {
+          "id": "KB-03",
+          "title": "Signing key protection",
+          "text": "Signing key confidentiality protects the ability to authorize firmware. Limit signing access, separate development and production keys, and use protected key storage. A leaked signing key can make malicious firmware appear authentic.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-03",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 6.13417
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q04",
+    "question": "What authorization is needed for diagnostic programming?",
+    "expected_source": "KB-04",
+    "split": "smoke",
+    "retrieved": [
+      "KB-04"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.72,
+    "output": {
+      "answer": "Diagnostic access requires authentication and authorization for privileged operations. Restrict programming operations to permitted diagnostic sessions and log rejected attempts. The presence of a diagnostic interface does not prove that it is exploitable.",
+      "citations": [
+        {
+          "id": "KB-04",
+          "title": "Diagnostic authorization",
+          "text": "Diagnostic access requires authentication and authorization for privileged operations. Restrict programming operations to permitted diagnostic sessions and log rejected attempts. The presence of a diagnostic interface does not prove that it is exploitable.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-04",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 9.7703
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q05",
+    "question": "How can gateway segmentation isolate internal networks?",
+    "expected_source": "KB-05",
+    "split": "smoke",
+    "retrieved": [
+      "KB-05"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.498,
+    "output": {
+      "answer": "Gateway segmentation limits communication between external interfaces and internal ECU networks. Use explicit message allowlists and validate message length, state and origin. Connectivity alone is not evidence of a feasible attack path.",
+      "citations": [
+        {
+          "id": "KB-05",
+          "title": "Gateway isolation",
+          "text": "Gateway segmentation limits communication between external interfaces and internal ECU networks. Use explicit message allowlists and validate message length, state and origin. Connectivity alone is not evidence of a feasible attack path.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-05",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 9.73454
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q06",
+    "question": "How can rate limits protect update service availability?",
+    "expected_source": "KB-06",
+    "split": "smoke",
+    "retrieved": [
+      "KB-06",
+      "KB-08",
+      "KB-05"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 1.15,
+    "output": {
+      "answer": "Availability controls for an update service include request rate limits, resource quotas and recovery behavior. Flooding an exposed update endpoint may delay legitimate updates; impact depends on operational context.",
+      "citations": [
+        {
+          "id": "KB-06",
+          "title": "Service availability",
+          "text": "Availability controls for an update service include request rate limits, resource quotas and recovery behavior. Flooding an exposed update endpoint may delay legitimate updates; impact depends on operational context.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-06",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 11.72719
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q07",
+    "question": "How should update transport certificates be validated?",
+    "expected_source": "KB-07",
+    "split": "smoke",
+    "retrieved": [
+      "KB-07",
+      "KB-06",
+      "KB-08"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.937,
+    "output": {
+      "answer": "Update transport confidentiality and integrity can use authenticated encrypted connections with certificate validation. Secure transport complements package signature verification; neither control is evidence that the other is implemented.",
+      "citations": [
+        {
+          "id": "KB-07",
+          "title": "Transport protection",
+          "text": "Update transport confidentiality and integrity can use authenticated encrypted connections with certificate validation. Secure transport complements package signature verification; neither control is evidence that the other is implemented.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-07",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 4.81982
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q08",
+    "question": "What should security audit logs record?",
+    "expected_source": "KB-08",
+    "split": "smoke",
+    "retrieved": [
+      "KB-08",
+      "KB-11"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.708,
+    "output": {
+      "answer": "Security audit logs record update acceptance, rejection, actor identity, timestamp and package version. Protect log integrity and access, and retain evidence according to the project policy.",
+      "citations": [
+        {
+          "id": "KB-08",
+          "title": "Audit evidence",
+          "text": "Security audit logs record update acceptance, rejection, actor identity, timestamp and package version. Protect log integrity and access, and retain evidence according to the project policy.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-08",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 9.94443
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q09",
+    "question": "What does the educational risk matrix calculate?",
+    "expected_source": "KB-09",
+    "split": "smoke",
+    "retrieved": [
+      "KB-09"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.76,
+    "output": {
+      "answer": "The DEMO-RISK-v1 educational matrix uses impact and attack feasibility, each rated 1 to 4 by a reviewer. Product scores 1 to 3 are Low, 4 to 7 Medium, 8 to 11 High, and 12 to 16 Critical. This is a synthetic teaching method, not the ISO/SAE 21434 risk method. Missing ratings mean Unassessed.",
+      "citations": [
+        {
+          "id": "KB-09",
+          "title": "Risk method",
+          "text": "The DEMO-RISK-v1 educational matrix uses impact and attack feasibility, each rated 1 to 4 by a reviewer. Product scores 1 to 3 are Low, 4 to 7 Medium, 8 to 11 High, and 12 to 16 Critical. This is a synthetic teaching method, not the ISO/SAE 21434 risk method. Missing ratings mean Unassessed.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-09",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 6.8034
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q10",
+    "question": "What belongs in an item definition?",
+    "expected_source": "KB-10",
+    "split": "smoke",
+    "retrieved": [
+      "KB-10"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.467,
+    "output": {
+      "answer": "An item definition describes functions, components, operational context, external interfaces and assumptions. An asset is something whose cybersecurity properties matter. A damage scenario describes an adverse consequence; a threat scenario describes a potential cause of that consequence.",
+      "citations": [
+        {
+          "id": "KB-10",
+          "title": "Assessment boundaries",
+          "text": "An item definition describes functions, components, operational context, external interfaces and assumptions. An asset is something whose cybersecurity properties matter. A damage scenario describes an adverse consequence; a threat scenario describes a potential cause of that consequence.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-10",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 4.33136
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q11",
+    "question": "Are unknown controls necessarily absent?",
+    "expected_source": "KB-11",
+    "split": "smoke",
+    "retrieved": [
+      "KB-11",
+      "KB-06",
+      "KB-12"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 0.866,
+    "output": {
+      "answer": "Candidate threats need engineering review. Unknown controls are not absent controls. Record assumptions and evidence separately. An accepted finding is accepted for the project register, not vehicle release or regulatory approval.",
+      "citations": [
+        {
+          "id": "KB-11",
+          "title": "Review and uncertainty",
+          "text": "Candidate threats need engineering review. Unknown controls are not absent controls. Record assumptions and evidence separately. An accepted finding is accepted for the project register, not vehicle release or regulatory approval.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-11",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 6.52222
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q12",
+    "question": "What should happen when architecture changes invalidate a review?",
+    "expected_source": "KB-12",
+    "split": "smoke",
+    "retrieved": [
+      "KB-12",
+      "KB-11",
+      "KB-01"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 1.318,
+    "output": {
+      "answer": "Architecture changes can invalidate earlier assessments. Compare components, interfaces, controls and trust boundaries, then trace dependencies to affected assets and tests. Mark affected reviews stale; do not silently reuse a previous approval.",
+      "citations": [
+        {
+          "id": "KB-12",
+          "title": "Change reassessment",
+          "text": "Architecture changes can invalidate earlier assessments. Compare components, interfaces, controls and trust boundaries, then trace dependencies to affected assets and tests. Mark affected reviews stale; do not silently reuse a previous approval.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-12",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 6.07761
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q13",
+    "question": "Could we install a correctly signed but obsolete release?",
+    "expected_source": "KB-02",
+    "split": "challenge",
+    "retrieved": [
+      "KB-11"
+    ],
+    "top1_correct": false,
+    "recall_at_3": false,
+    "reciprocal_rank": 0,
+    "citation_resolves": true,
+    "latency_ms": 0.56,
+    "output": {
+      "answer": "Candidate threats need engineering review. Unknown controls are not absent controls. Record assumptions and evidence separately. An accepted finding is accepted for the project register, not vehicle release or regulatory approval.",
+      "citations": [
+        {
+          "id": "KB-11",
+          "title": "Review and uncertainty",
+          "text": "Candidate threats need engineering review. Unknown controls are not absent controls. Record assumptions and evidence separately. An accepted finding is accepted for the project register, not vehicle release or regulatory approval.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-11",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 2.26548
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q14",
+    "question": "Who is permitted to authorize software packages?",
+    "expected_source": "KB-03",
+    "split": "challenge",
+    "retrieved": [
+      "KB-04",
+      "KB-03"
+    ],
+    "top1_correct": false,
+    "recall_at_3": true,
+    "reciprocal_rank": 0.5,
+    "citation_resolves": true,
+    "latency_ms": 0.977,
+    "output": {
+      "answer": "Diagnostic access requires authentication and authorization for privileged operations. Restrict programming operations to permitted diagnostic sessions and log rejected attempts. The presence of a diagnostic interface does not prove that it is exploitable.",
+      "citations": [
+        {
+          "id": "KB-04",
+          "title": "Diagnostic authorization",
+          "text": "Diagnostic access requires authentication and authorization for privileged operations. Restrict programming operations to permitted diagnostic sessions and log rejected attempts. The presence of a diagnostic interface does not prove that it is exploitable.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-04",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 2.34233
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q15",
+    "question": "What happens if a privileged programming request lacks permission?",
+    "expected_source": "KB-04",
+    "split": "challenge",
+    "retrieved": [
+      "KB-04",
+      "KB-06"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 1.0,
+    "output": {
+      "answer": "Diagnostic access requires authentication and authorization for privileged operations. Restrict programming operations to permitted diagnostic sessions and log rejected attempts. The presence of a diagnostic interface does not prove that it is exploitable.",
+      "citations": [
+        {
+          "id": "KB-04",
+          "title": "Diagnostic authorization",
+          "text": "Diagnostic access requires authentication and authorization for privileged operations. Restrict programming operations to permitted diagnostic sessions and log rejected attempts. The presence of a diagnostic interface does not prove that it is exploitable.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-04",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 4.6792
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q16",
+    "question": "What evidence should be retained when a package is rejected?",
+    "expected_source": "KB-08",
+    "split": "challenge",
+    "retrieved": [
+      "KB-08",
+      "KB-07",
+      "KB-04"
+    ],
+    "top1_correct": true,
+    "recall_at_3": true,
+    "reciprocal_rank": 1.0,
+    "citation_resolves": true,
+    "latency_ms": 1.49,
+    "output": {
+      "answer": "Security audit logs record update acceptance, rejection, actor identity, timestamp and package version. Protect log integrity and access, and retain evidence according to the project policy.",
+      "citations": [
+        {
+          "id": "KB-08",
+          "title": "Audit evidence",
+          "text": "Security audit logs record update acceptance, rejection, actor identity, timestamp and package version. Protect log integrity and access, and retain evidence according to the project policy.",
+          "source": "Synthetic_Threat_Handbook.md",
+          "locator": "KB-08",
+          "classification": "SYNTHETIC",
+          "version": "1.0",
+          "score": 3.11728
+        }
+      ],
+      "abstained": false,
+      "mode": "offline-extractive"
+    }
+  },
+  {
+    "id": "Q17",
+    "question": "What is the weather in Pune tomorrow?",
+    "expected_source": null,
+    "split": "abstention",
+    "retrieved": [],
+    "top1_correct": true,
+    "recall_at_3": null,
+    "reciprocal_rank": 0,
+    "citation_resolves": true,
+    "latency_ms": 0.519,
+    "output": {
+      "answer": "Insufficient evidence in the project knowledge base.",
+      "citations": [],
+      "abstained": true,
+      "mode": "offline"
+    }
+  },
+  {
+    "id": "Q18",
+    "question": "Who won the football world cup?",
+    "expected_source": null,
+    "split": "abstention",
+    "retrieved": [],
+    "top1_correct": true,
+    "recall_at_3": null,
+    "reciprocal_rank": 0,
+    "citation_resolves": true,
+    "latency_ms": 0.36,
+    "output": {
+      "answer": "Insufficient evidence in the project knowledge base.",
+      "citations": [],
+      "abstained": true,
+      "mode": "offline"
+    }
+  }
+]

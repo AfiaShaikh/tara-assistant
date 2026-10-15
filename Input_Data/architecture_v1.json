@@ -1,0 +1,81 @@
+{
+  "id": "OTA-DEMO",
+  "version": "1.0",
+  "title": "Synthetic OTA update system",
+  "classification": "SYNTHETIC",
+  "description": "Parked vehicle receives signed firmware from a backend via a gateway. No live vehicle is connected.",
+  "components": [
+    {
+      "id": "backend",
+      "name": "Update backend",
+      "zone": "external"
+    },
+    {
+      "id": "gateway",
+      "name": "Vehicle gateway",
+      "zone": "vehicle"
+    },
+    {
+      "id": "ecu",
+      "name": "Target ECU",
+      "zone": "internal"
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "IF-01",
+      "name": "OTA transport",
+      "source": "backend",
+      "target": "gateway",
+      "protocol": "HTTPS",
+      "exposed": true,
+      "controls": [
+        "TLS certificate validation"
+      ]
+    },
+    {
+      "id": "IF-02",
+      "name": "Programming link",
+      "source": "gateway",
+      "target": "ecu",
+      "protocol": "CAN",
+      "exposed": false,
+      "controls": []
+    }
+  ],
+  "assets": [
+    {
+      "id": "A-01",
+      "name": "ECU firmware integrity",
+      "component": "ecu",
+      "tags": [
+        "firmware"
+      ],
+      "controls": [
+        "Package signature verification"
+      ]
+    },
+    {
+      "id": "A-02",
+      "name": "Signing key confidentiality",
+      "component": "backend",
+      "tags": [
+        "signing"
+      ],
+      "controls": []
+    },
+    {
+      "id": "A-03",
+      "name": "Update service availability",
+      "component": "gateway",
+      "tags": [
+        "availability"
+      ],
+      "controls": []
+    }
+  ],
+  "assumptions": [
+    "Vehicle is parked during updates.",
+    "Key storage design and rollback behavior are unspecified."
+  ]
+}

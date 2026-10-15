@@ -1,0 +1,28 @@
+{
+  "id": "DEMO-RISK-v1",
+  "notice": "Educational only; not an ISO/SAE 21434 assessment method.",
+  "scale": {
+    "1": "Low impact / difficult attack",
+    "2": "Moderate impact / somewhat difficult",
+    "3": "Major impact / somewhat feasible",
+    "4": "Severe impact / easy attack"
+  },
+  "thresholds": [
+    [
+      3,
+      "Low"
+    ],
+    [
+      7,
+      "Medium"
+    ],
+    [
+      11,
+      "High"
+    ],
+    [
+      16,
+      "Critical"
+    ]
+  ]
+}

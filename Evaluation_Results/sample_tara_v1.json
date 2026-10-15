@@ -1,0 +1,160 @@
+[
+  {
+    "id": "F-a09ef78a59",
+    "architecture_hash": "07332c0b454aea969c0f00c67e2d4382f4237da47932cf132af16d8b7d07646a",
+    "architecture_version": "1.0",
+    "asset_id": "A-01",
+    "asset_name": "ECU firmware integrity",
+    "component": "ecu",
+    "pattern_id": "TH-01",
+    "title": "Unauthorized firmware acceptance",
+    "scenario": "An untrusted package is accepted during update.",
+    "damage": "Loss of intended ECU function.",
+    "mitigation": "Verify authorized package signatures before installation.",
+    "requirement": "Invalidly signed packages shall be rejected before installation.",
+    "test": "Submit a deliberately invalid signature in a simulated update and confirm rejection.",
+    "assumptions": [
+      "Attacker can submit a package; signature verification failure would need evidence."
+    ],
+    "documented_controls": [
+      "Package signature verification"
+    ],
+    "citations": [
+      "KB-01",
+      "ARCH:1.0#/assets/A-01"
+    ],
+    "candidate_paths": [
+      [
+        "IF-01",
+        "IF-02"
+      ]
+    ],
+    "path_notice": "Connectivity hypothesis only; controls and prerequisites not evaluated.",
+    "impact": null,
+    "feasibility": null,
+    "score": null,
+    "risk": "Unassessed",
+    "risk_policy": "DEMO-RISK-v1",
+    "rationale": "",
+    "reviewer": "",
+    "status": "Draft",
+    "revision": 1,
+    "needs_reassessment": false
+  },
+  {
+    "id": "F-3ad0bb0795",
+    "architecture_hash": "07332c0b454aea969c0f00c67e2d4382f4237da47932cf132af16d8b7d07646a",
+    "architecture_version": "1.0",
+    "asset_id": "A-01",
+    "asset_name": "ECU firmware integrity",
+    "component": "ecu",
+    "pattern_id": "TH-02",
+    "title": "Firmware rollback",
+    "scenario": "An older authorized but vulnerable package is installed.",
+    "damage": "Known weaknesses are reintroduced.",
+    "mitigation": "Enforce protected minimum firmware versions.",
+    "requirement": "Packages below the authorized minimum version shall be rejected.",
+    "test": "Attempt a downgrade using a synthetic older package and verify rejection.",
+    "assumptions": [
+      "Attacker can deliver an old package; rollback policy is unspecified."
+    ],
+    "documented_controls": [
+      "Package signature verification"
+    ],
+    "citations": [
+      "KB-02",
+      "ARCH:1.0#/assets/A-01"
+    ],
+    "candidate_paths": [
+      [
+        "IF-01",
+        "IF-02"
+      ]
+    ],
+    "path_notice": "Connectivity hypothesis only; controls and prerequisites not evaluated.",
+    "impact": null,
+    "feasibility": null,
+    "score": null,
+    "risk": "Unassessed",
+    "risk_policy": "DEMO-RISK-v1",
+    "rationale": "",
+    "reviewer": "",
+    "status": "Draft",
+    "revision": 1,
+    "needs_reassessment": false
+  },
+  {
+    "id": "F-1500aa7b29",
+    "architecture_hash": "07332c0b454aea969c0f00c67e2d4382f4237da47932cf132af16d8b7d07646a",
+    "architecture_version": "1.0",
+    "asset_id": "A-02",
+    "asset_name": "Signing key confidentiality",
+    "component": "backend",
+    "pattern_id": "TH-03",
+    "title": "Signing key disclosure",
+    "scenario": "An unauthorized actor obtains signing authority.",
+    "damage": "Unauthorized packages may appear legitimate.",
+    "mitigation": "Protect keys and restrict signing permissions.",
+    "requirement": "Signing operations shall require an authorized identity and produce audit records.",
+    "test": "Attempt signing with an unauthorized test identity and verify denial.",
+    "assumptions": [
+      "Key custody and access controls require clarification."
+    ],
+    "documented_controls": [],
+    "citations": [
+      "KB-03",
+      "ARCH:1.0#/assets/A-02"
+    ],
+    "candidate_paths": [],
+    "path_notice": "Connectivity hypothesis only; controls and prerequisites not evaluated.",
+    "impact": null,
+    "feasibility": null,
+    "score": null,
+    "risk": "Unassessed",
+    "risk_policy": "DEMO-RISK-v1",
+    "rationale": "",
+    "reviewer": "",
+    "status": "Draft",
+    "revision": 1,
+    "needs_reassessment": false
+  },
+  {
+    "id": "F-0b4a3673db",
+    "architecture_hash": "07332c0b454aea969c0f00c67e2d4382f4237da47932cf132af16d8b7d07646a",
+    "architecture_version": "1.0",
+    "asset_id": "A-03",
+    "asset_name": "Update service availability",
+    "component": "gateway",
+    "pattern_id": "TH-04",
+    "title": "Update endpoint exhaustion",
+    "scenario": "Excess requests consume update service resources.",
+    "damage": "Legitimate updates are delayed.",
+    "mitigation": "Bound request rates and resource consumption.",
+    "requirement": "Update services shall enforce configured resource and request limits.",
+    "test": "Use a bounded synthetic load in a simulator and check rejection and recovery.",
+    "assumptions": [
+      "Endpoint is reachable; capacity and operational impact are unknown."
+    ],
+    "documented_controls": [],
+    "citations": [
+      "KB-06",
+      "ARCH:1.0#/assets/A-03"
+    ],
+    "candidate_paths": [
+      [
+        "IF-01"
+      ]
+    ],
+    "path_notice": "Connectivity hypothesis only; controls and prerequisites not evaluated.",
+    "impact": null,
+    "feasibility": null,
+    "score": null,
+    "risk": "Unassessed",
+    "risk_policy": "DEMO-RISK-v1",
+    "rationale": "",
+    "reviewer": "",
+    "status": "Draft",
+    "revision": 1,
+    "needs_reassessment": false
+  }
+]

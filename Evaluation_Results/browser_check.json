@@ -1,0 +1,7 @@
+{
+  "ui_workflow_passed": true,
+  "frames": 320,
+  "captioned_video_seconds": 320,
+  "page_errors": [],
+  "scope": "Chromium synthetic offline UI walkthrough; no live LLM or PostgreSQL"
+}

@@ -1,0 +1,30 @@
+{
+  "default_mode": "offline",
+  "offline_generator": "Extractive answers and deterministic threat-pattern matching; no pretrained LLM",
+  "embedding": "Stable signed token-hash vectors, 384 dimensions; lexical, not learned semantic embeddings",
+  "retrieval": "BM25 lexical ranking + hashed vector cosine; project-local corpus",
+  "database_default": "SQLite",
+  "database_optional": "PostgreSQL with pgvector",
+  "llm_optional": {
+    "provider": "Ollama local HTTP API",
+    "model": "qwen2.5:3b-instruct (proposed; install separately)",
+    "version": "Not downloaded or validated in build environment. Run model_probe.py to record digest and runtime version.",
+    "temperature": 0,
+    "remote_cloud_api": "None required",
+    "license_notice": "Review the model-specific license before use or redistribution; weights are not bundled."
+  },
+  "network": "Offline mode has no runtime network dependency. Initial package/container/model installation requires internet unless pre-cached.",
+  "ai_assessment": {
+    "module": "Code/ai_assessment.py",
+    "model": "qwen2.5:3b-instruct",
+    "provider": "Ollama",
+    "temperature": 0,
+    "num_ctx": 8192,
+    "num_predict": 4096,
+    "output_schema": "DraftAssessment.model_json_schema()",
+    "database_table": "ai_assessments",
+    "fallback": "None; errors are saved as Failed",
+    "validation": "Pydantic schema, asset references, unique IDs, citation membership, system-input citation requirement",
+    "live_model_evaluation": "Pending local runtime; fixture tests do not measure model quality"
+  }
+}

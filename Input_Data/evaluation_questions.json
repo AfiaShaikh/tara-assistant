@@ -1,0 +1,110 @@
+[
+  {
+    "id": "Q01",
+    "question": "How should we verify firmware signature authenticity?",
+    "expected_source": "KB-01",
+    "split": "smoke"
+  },
+  {
+    "id": "Q02",
+    "question": "How do we prevent rollback to old firmware versions?",
+    "expected_source": "KB-02",
+    "split": "smoke"
+  },
+  {
+    "id": "Q03",
+    "question": "How do we protect signing keys?",
+    "expected_source": "KB-03",
+    "split": "smoke"
+  },
+  {
+    "id": "Q04",
+    "question": "What authorization is needed for diagnostic programming?",
+    "expected_source": "KB-04",
+    "split": "smoke"
+  },
+  {
+    "id": "Q05",
+    "question": "How can gateway segmentation isolate internal networks?",
+    "expected_source": "KB-05",
+    "split": "smoke"
+  },
+  {
+    "id": "Q06",
+    "question": "How can rate limits protect update service availability?",
+    "expected_source": "KB-06",
+    "split": "smoke"
+  },
+  {
+    "id": "Q07",
+    "question": "How should update transport certificates be validated?",
+    "expected_source": "KB-07",
+    "split": "smoke"
+  },
+  {
+    "id": "Q08",
+    "question": "What should security audit logs record?",
+    "expected_source": "KB-08",
+    "split": "smoke"
+  },
+  {
+    "id": "Q09",
+    "question": "What does the educational risk matrix calculate?",
+    "expected_source": "KB-09",
+    "split": "smoke"
+  },
+  {
+    "id": "Q10",
+    "question": "What belongs in an item definition?",
+    "expected_source": "KB-10",
+    "split": "smoke"
+  },
+  {
+    "id": "Q11",
+    "question": "Are unknown controls necessarily absent?",
+    "expected_source": "KB-11",
+    "split": "smoke"
+  },
+  {
+    "id": "Q12",
+    "question": "What should happen when architecture changes invalidate a review?",
+    "expected_source": "KB-12",
+    "split": "smoke"
+  },
+  {
+    "id": "Q13",
+    "question": "Could we install a correctly signed but obsolete release?",
+    "expected_source": "KB-02",
+    "split": "challenge"
+  },
+  {
+    "id": "Q14",
+    "question": "Who is permitted to authorize software packages?",
+    "expected_source": "KB-03",
+    "split": "challenge"
+  },
+  {
+    "id": "Q15",
+    "question": "What happens if a privileged programming request lacks permission?",
+    "expected_source": "KB-04",
+    "split": "challenge"
+  },
+  {
+    "id": "Q16",
+    "question": "What evidence should be retained when a package is rejected?",
+    "expected_source": "KB-08",
+    "split": "challenge"
+  },
+  {
+    "id": "Q17",
+    "question": "What is the weather in Pune tomorrow?",
+    "expected_source": null,
+    "split": "abstention"
+  },
+  {
+    "id": "Q18",
+    "question": "Who won the football world cup?",
+    "expected_source": null,
+    "split": "abstention"
+  }
+]

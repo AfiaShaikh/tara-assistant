@@ -1,0 +1,62 @@
+[
+  {
+    "id": "TH-01",
+    "tag": "firmware",
+    "title": "Unauthorized firmware acceptance",
+    "scenario": "An untrusted package is accepted during update.",
+    "damage": "Loss of intended ECU function.",
+    "evidence_id": "KB-01",
+    "mitigation": "Verify authorized package signatures before installation.",
+    "requirement": "Invalidly signed packages shall be rejected before installation.",
+    "test": "Submit a deliberately invalid signature in a simulated update and confirm rejection.",
+    "assumption": "Attacker can submit a package; signature verification failure would need evidence."
+  },
+  {
+    "id": "TH-02",
+    "tag": "firmware",
+    "title": "Firmware rollback",
+    "scenario": "An older authorized but vulnerable package is installed.",
+    "damage": "Known weaknesses are reintroduced.",
+    "evidence_id": "KB-02",
+    "mitigation": "Enforce protected minimum firmware versions.",
+    "requirement": "Packages below the authorized minimum version shall be rejected.",
+    "test": "Attempt a downgrade using a synthetic older package and verify rejection.",
+    "assumption": "Attacker can deliver an old package; rollback policy is unspecified."
+  },
+  {
+    "id": "TH-03",
+    "tag": "signing",
+    "title": "Signing key disclosure",
+    "scenario": "An unauthorized actor obtains signing authority.",
+    "damage": "Unauthorized packages may appear legitimate.",
+    "evidence_id": "KB-03",
+    "mitigation": "Protect keys and restrict signing permissions.",
+    "requirement": "Signing operations shall require an authorized identity and produce audit records.",
+    "test": "Attempt signing with an unauthorized test identity and verify denial.",
+    "assumption": "Key custody and access controls require clarification."
+  },
+  {
+    "id": "TH-04",
+    "tag": "availability",
+    "title": "Update endpoint exhaustion",
+    "scenario": "Excess requests consume update service resources.",
+    "damage": "Legitimate updates are delayed.",
+    "evidence_id": "KB-06",
+    "mitigation": "Bound request rates and resource consumption.",
+    "requirement": "Update services shall enforce configured resource and request limits.",
+    "test": "Use a bounded synthetic load in a simulator and check rejection and recovery.",
+    "assumption": "Endpoint is reachable; capacity and operational impact are unknown."
+  },
+  {
+    "id": "TH-05",
+    "tag": "diagnostics",
+    "title": "Unauthorized diagnostic programming",
+    "scenario": "A privileged diagnostic operation is accepted without authorization.",
+    "damage": "Unauthorized changes to ECU software.",
+    "evidence_id": "KB-04",
+    "mitigation": "Enforce diagnostic session and authorization checks.",
+    "requirement": "Programming requests without authorization shall be rejected.",
+    "test": "Send an unauthorized simulated programming request and verify rejection.",
+    "assumption": "Diagnostic interface exists; authorization design requires review."
+  }
+]

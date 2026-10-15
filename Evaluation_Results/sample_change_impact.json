@@ -1,0 +1,44 @@
+{
+  "changes": [
+    {
+      "kind": "interfaces",
+      "id": "IF-03",
+      "change": "added",
+      "before": null,
+      "after": {
+        "id": "IF-03",
+        "name": "External service port",
+        "source": "gateway",
+        "target": "ecu",
+        "protocol": "UDS",
+        "exposed": true,
+        "controls": []
+      }
+    },
+    {
+      "kind": "assets",
+      "id": "A-04",
+      "change": "added",
+      "before": null,
+      "after": {
+        "id": "A-04",
+        "name": "Diagnostic programming authorization",
+        "component": "ecu",
+        "tags": [
+          "diagnostics"
+        ],
+        "controls": []
+      }
+    }
+  ],
+  "affected_components": [
+    "ecu",
+    "gateway"
+  ],
+  "affected_findings": [
+    "F-a09ef78a59",
+    "F-3ad0bb0795",
+    "F-0b4a3673db"
+  ],
+  "notice": "Conservative forward dependency analysis; expert review may identify additional impacts."
+}

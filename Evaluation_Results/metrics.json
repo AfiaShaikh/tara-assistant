@@ -1,0 +1,22 @@
+{
+  "evaluation_mode": "offline-extractive + deterministic patterns",
+  "dataset": "Synthetic self-authored set; not independent/expert-validated",
+  "positive_questions": 16,
+  "abstention_questions": 2,
+  "top1_accuracy": 0.875,
+  "recall_at_3": 0.9375,
+  "mrr_at_3": 0.90625,
+  "abstention_accuracy": 1.0,
+  "citation_resolution_rate": 1.0,
+  "mean_latency_ms": 0.8450555555555556,
+  "llm_evaluated": false,
+  "postgres_evaluated": false,
+  "limits": [
+    "Citation resolution is not semantic correctness.",
+    "Small synthetic corpus and questions share an author.",
+    "No expert threat-coverage or risk-validity benchmark.",
+    "End-to-end Ollama and PostgreSQL were not exercised."
+  ],
+  "smoke_top1_accuracy": 1.0,
+  "challenge_top1_accuracy": 0.5
+}
