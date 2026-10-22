@@ -1,9 +1,8 @@
 # To be completed by students before signing
 
-Student name: ______________________
-PRN: _______________________________
-Team members and PRNs: _____________
-Faculty guide: _____________________
+Student name: Afia Shaikh
+PRN: 123B1B061
+
 
 | Student | Design contribution | Code/data contribution | Testing contribution | Evidence / file references |
 |---|---|---|---|---|
