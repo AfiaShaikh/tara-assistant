@@ -17,4 +17,4 @@ The tested baseline requires Python and the packages in Code/requirements.txt. I
 ## Approval status
 
 Student signature/date: __________________
-Faculty signature/date: __________________
+
